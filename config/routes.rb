@@ -1,5 +1,7 @@
 ThoughtLog::Application.routes.draw do
 
+  get "debates/new"
+
   get "pages/home"
   match '/goop/gwap', :to => 'pages#home'
 
