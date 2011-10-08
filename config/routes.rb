@@ -1,9 +1,9 @@
 ThoughtLog::Application.routes.draw do
 
-  get "debates/new"
-
   get "pages/home"
   match '/goop/gwap', :to => 'pages#home'
+  
+  resources :debates
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
