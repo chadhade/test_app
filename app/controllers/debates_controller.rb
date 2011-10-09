@@ -37,5 +37,10 @@ class DebatesController < ApplicationController
 	@title = "All debates"
 	@debates = Debate.all
   end
+  
+  def destroy
+	Debate.find(params[:id]).destroy
+	redirect_to debates_path
+  end
 	
 end
