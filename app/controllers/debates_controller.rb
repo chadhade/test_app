@@ -5,6 +5,7 @@ class DebatesController < ApplicationController
   
   def new
 	@title = "Instance Variable Defined in New Action in DebatesController"
+	@debate = Debate.new
   end
 
 end

@@ -1,2 +1,15 @@
-<h1>Debates#new</h1>
-<p>Find me in app/views/debates/new.html.erb</p>
+<h1>Create new debate</h1>
+
+<%= form_for(@debate) do |f| %>
+	<div class = "field">
+		<%= f.label :topic %> <br />
+		<%= f.text_field :topic %>
+	</div>
+	<div class = "field">
+		<%= f.label :length %> <br />
+		<%= f.number_field :length %>
+	</div>
+	<div class = "action">
+		<%= f.submit "Create debate" %>
+	</div>	
+<% end %>
