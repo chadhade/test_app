@@ -1,0 +1,9 @@
+<h1>All debates</h1>
+
+<ul class ="debates">
+	<%= @debates.each do |debate| %>
+		<li>
+			<%= link_to "#{debate.topic} lasting #{debate.length} minutes", edit_debate_path(debate.id) %>
+		</li>
+	<% end %>
+<ul>

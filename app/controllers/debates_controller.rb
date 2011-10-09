@@ -32,5 +32,10 @@ class DebatesController < ApplicationController
 		render 'edit'
 	end
   end
+  
+  def index
+	@title = "All debates"
+	@debates = Debate.all
+  end
 	
 end
