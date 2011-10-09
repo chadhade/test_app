@@ -1,0 +1,15 @@
+<h1>Edit debate</h1>
+
+<%= form_for(@debate) do |f| %>
+	<div class = "field">
+		<%= f.label :topic %> <br />
+		<%= f.text_field :topic %>
+	</div>
+	<div class = "field">
+		<%= f.label :length %> <br />
+		<%= f.number_field :length %>
+	</div>
+	<div class = "action">
+		<%= f.submit "Update" %>
+	</div>	
+<% end %>
