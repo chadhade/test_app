@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ThoughtLog</title>
+  <title>Debate or Convo App</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
+<header>
+<% if signed_in? %>
+  <li><%= link_to "Profile", current_user %></li>
+<% end %>
+<% if signed_in? %>
+  <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+<% else %>
+  <li><%= link_to "Sign in", new_session_path %></li>
+<% end %>
+</header>
 <body>
 
 <%= yield %>
