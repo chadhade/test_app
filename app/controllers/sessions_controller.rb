@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by_handle_and_pass(params[:session][:handle], params[:session][:pass])
 	sign_in user
-	redirect_to user
+	redirect_to convos_path
   end
   
   def destroy
