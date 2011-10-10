@@ -9,6 +9,7 @@ class ConvosController < ApplicationController
   end
 
   def index
+    @convos = Convo.all
   end
 
 end

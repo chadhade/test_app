@@ -1,2 +1,5 @@
-<h1>Convos#index</h1>
-<p>Find me in app/views/convos/index.html.erb</p>
+<ul class = "Convo">
+  <%= @convos.each do |convo| %>
+    <li> <%= link_to convo.topic, convo %> </li>
+  <% end %>
+</ul>
