@@ -1,5 +1,5 @@
 ThoughtLog::Application.routes.draw do
-  resources :users
+  resources :users, :only => [:new, :create, :show]
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

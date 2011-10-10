@@ -1,0 +1,15 @@
+<h1>Create New User</h1>
+
+<%= form_for(@user) do |f| %>
+	<div class = "field">
+		<%= f.label :handle %> <br />
+		<%= f.text_field :handle %>
+	</div>
+	<div class = "field">
+		<%= f.label :pass %> <br />
+		<%= f.text_field :pass %>
+	</div>
+	<div class = "action">
+		<%= f.submit "Create User" %>
+	</div>	
+<% end %>
