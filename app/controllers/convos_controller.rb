@@ -6,6 +6,7 @@ class ConvosController < ApplicationController
   def create
 	@convo = Convo.new(params[:convo])
 	if @convo.save
+	  ConvoUser.new(:user_id => current_user.id, :convo_id => @convo.id, :creator => true).save
 	  redirect_to @convo
 	else
 	  render 'new'
