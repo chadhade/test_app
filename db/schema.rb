@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111010014309) do
+ActiveRecord::Schema.define(:version => 20111010204738) do
+
+  create_table "convo_users", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "convo_id"
+    t.boolean  "creator"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "convos", :force => true do |t|
+    t.text     "topic"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.integer  "current_turn"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "debates", :force => true do |t|
     t.text     "topic"
