@@ -1,2 +1,11 @@
-<h1>Convos#new</h1>
-<p>Find me in app/views/convos/new.html.erb</p>
+<h1>New Convo</h1>
+
+<%= form_for(@convo) do |f| %>
+	<div class = "field">
+		<%= f.label :topic %> <br />
+		<%= f.text_field :topic %>
+	</div>
+	<div class = "action">
+		<%= f.submit "Create New Convo" %>
+	</div>	
+<% end %>
