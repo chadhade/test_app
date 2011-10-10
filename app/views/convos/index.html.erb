@@ -1,5 +1,9 @@
+<p>Join existing convo</p>
+
 <ul class = "Convo">
   <%= @convos.each do |convo| %>
     <li> <%= link_to convo.topic, convo %> </li>
   <% end %>
 </ul>
+
+<p>What to create a new convo? <%= link_to "Create new convo now!", new_convo_path %></p>
