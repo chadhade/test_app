@@ -1,4 +1,12 @@
 ThoughtLog::Application.routes.draw do
+  get "convos/new"
+
+  get "convos/create"
+
+  get "convos/show"
+
+  get "convos/index"
+
   resources :users, :only => [:new, :create, :show]
   resources :sessions, :only => [:new, :create, :destroy]
   
