@@ -1,4 +1,10 @@
 ThoughtLog::Application.routes.draw do
+  get "posts/show"
+
+  get "posts/new"
+
+  get "posts/create"
+
 #  get "convos/new"
 #  get "convos/create"
 #  get "convos/show"
