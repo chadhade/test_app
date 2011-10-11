@@ -15,6 +15,9 @@ class ConvosController < ApplicationController
   end
 
   def show
+    @convo = Convo.find(params[:id])
+	@posts = Post.find_all_by_convo_id(params[:id])
+	@convo_user = ConvoUser.find_by_convo_id_and_user_id(params[:id], current_user.id)
   end
 
   def index

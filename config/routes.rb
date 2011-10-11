@@ -1,10 +1,7 @@
 ThoughtLog::Application.routes.draw do
-  get "posts/show"
-
-  get "posts/new"
-
-  get "posts/create"
-
+# get "posts/show"
+#  get "posts/new"
+#  get "posts/create"
 #  get "convos/new"
 #  get "convos/create"
 #  get "convos/show"
@@ -13,6 +10,7 @@ ThoughtLog::Application.routes.draw do
   resources :users, :only => [:new, :create, :show]
   resources :sessions, :only => [:new, :create, :destroy]
   resources :convos, :only => [:new, :create, :show, :index]
+  resources :posts
   
   match '/signout', :to => 'sessions#destroy'
   root :to => "sessions#new"

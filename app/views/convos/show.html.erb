@@ -1,2 +1,15 @@
-<h1>Convos#show</h1>
-<p>Find me in app/views/convos/show.html.erb</p>
+<h1>Convo: <%= @convo.topic %></h1>
+
+<ul class = "Convo_posts">
+  <%= @posts.each do |post| %>
+    <%= post.content %>
+  <% end %>
+</ul>
+
+<% if @posts.size==0 and @convo_user.nil? %>
+  Join conversation!
+<% end %>
+
+<% if @posts.size!=0 and current_user.id==current_turn %>
+  Post response!
+<% end %>
