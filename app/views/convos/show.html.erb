@@ -7,9 +7,19 @@
 </ul>
 
 <% if @posts.size==0 and @convo_user.nil? %>
-  Join conversation!
+  Join conversation! <br> <br>
+  <%= form_for(Post.new) do |f| %>
+	<%= f.hidden_field :convo_id, :value => @convo.id %>
+	<div class = "field">
+		<%= f.label :content %> <br />
+		<%= f.text_field :content %>
+	</div>
+	<div class = "action">
+		<%= f.submit "Submit" %>
+	</div>	
+  <% end %>
 <% end %>
 
-<% if @posts.size!=0 and current_user.id==current_turn %>
+<% if @posts.size!=0 and current_user.id==@convo.current_turn %>
   Post response!
 <% end %>

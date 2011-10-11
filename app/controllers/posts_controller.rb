@@ -9,6 +9,8 @@ class PostsController < ApplicationController
   end
 
   def create
+    current_user.posts.create(params[:post])
+	redirect_to convo_path(params[:post][:convo_id])
   end
 
 end
