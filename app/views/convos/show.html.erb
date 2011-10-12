@@ -1,7 +1,14 @@
+<% viewing = true %>
 <% ConvoUser.find_all_by_convo_id(@convo.id).each do |convouser| %>
   <br><%= "#{convouser.user.handle}:" %> <%= "creator? #{convouser.creator}" %>
+  <% viewing = false if convouser.user_id == current_user.id %>
 <% end %>
-<% nil %>
+
+<br><br>
+<%= "participating" if viewing == false %>
+<%= "viewing" if viewing == true %>
+<br>
+<%= "current turn: #{User.find_by_id(@convo.current_turn).handle}" %>
 
 <h1>
 Convo: <%= @convo.topic %> 
