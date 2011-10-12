@@ -1,7 +1,7 @@
 <p>Join existing convo</p>
 
 <ul class = "Convo">
-  <%= @convos.each do |convo| %>
+  <% @convos.each do |convo| %>
     <li> <%= link_to convo.topic, convo %> </li>
   <% end %>
 </ul>
