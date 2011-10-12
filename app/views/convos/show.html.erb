@@ -1,7 +1,14 @@
-<h1>Convo: <%= @convo.topic %></h1>
+<% ConvoUser.find_all_by_convo_id(@convo.id).each do |convouser| %>
+  <br><%= "#{convouser.user.handle}:" %> <%= "creator? #{convouser.creator}" %>
+<% end %>
+<% nil %>
+
+<h1>
+Convo: <%= @convo.topic %> 
+</h1>
 
 <ul class = "Convo_posts">
-  <%= @posts.each do |post| %>
+  <% @posts.each do |post| %>
     <%= post.content %> <br> <br>
   <% end %>
 </ul>
