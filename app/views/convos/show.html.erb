@@ -20,8 +20,7 @@ Convo: <%= @convo.topic %>
   <% end %>
 </ul>
 
-<% if @posts.size==0 and @convo_user.nil? %>
-  Join conversation! <br> <br>
+<% if (@posts.size==0 and @convo_user.nil?) or (@posts.size!=0 and current_user.id==@convo.current_turn) %>
   <%= form_for(Post.new) do |f| %>
 	<%= f.hidden_field :convo_id, :value => @convo.id %>
 	<div class = "field">
@@ -34,16 +33,3 @@ Convo: <%= @convo.topic %>
   <% end %>
 <% end %>
 
-<% if @posts.size!=0 and current_user.id==@convo.current_turn %>
-  Post response!
-  <%= form_for(Post.new) do |f| %>
-	<%= f.hidden_field :convo_id, :value => @convo.id %>
-	<div class = "field">
-		<%= f.label :content %> <br />
-		<%= f.text_field :content %>
-	</div>
-	<div class = "action">
-		<%= f.submit "Submit" %>
-	</div>	
-  <% end %>
-<% end %>
