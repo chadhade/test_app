@@ -41,7 +41,6 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     nokogiri (1.5.0-x86-mingw32)
-    pg (0.11.0-x86-mingw32)
     polyglot (0.3.2)
     rack (1.2.3)
     rack-mount (0.6.14)
@@ -92,7 +91,6 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  pg
   rails (= 3.0.10)
   rspec
   rspec-rails
