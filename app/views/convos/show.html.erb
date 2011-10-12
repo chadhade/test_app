@@ -4,7 +4,7 @@
   <% viewing = false if convouser.user_id == current_user.id %>
 <% end %>
 
-<br><br>
+<br>
 <%= "participating" if viewing == false %>
 <%= "viewing" if viewing == true %>
 <br>
@@ -13,6 +13,8 @@
 <h1>
 Convo: <%= @convo.topic %> 
 </h1>
+created_at: <%= @convo.created_at %> 
+and started_at <%= if @convo.start_time.nil? then "no start time" else @convo.start_time end %>
 
 <ul class = "Convo_posts">
   <% @posts.each do |post| %>

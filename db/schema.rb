@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(:version => 20111011192412) do
 
   create_table "convos", :force => true do |t|
     t.text     "topic"
-    t.time     "start_time"
-    t.time     "end_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.integer  "current_turn"
     t.datetime "created_at"
     t.datetime "updated_at"

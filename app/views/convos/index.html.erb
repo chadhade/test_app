@@ -1,9 +1,23 @@
-<p>Join existing convo</p>
+<p>Participating in convos</p>
+<ul class = "participating_in_convos">
+  <% @convos_participating.each do |convo| %>
+    <li> <%= link_to convo.topic, convo %> </li>
+  <% end %>
+</ul>
 
-<ul class = "Convo">
-  <% @convos.each do |convo| %>
+<p>Join convos</p>
+<ul class = "join_convo">
+  <% @convos_join.each do |convo| %>
+    <li> <%= link_to convo.topic, convo %> </li>
+  <% end %>
+</ul>
+
+<p>Watch convos</p>
+<ul class = "watch_convo">
+  <% @convos_watch.each do |convo| %>
     <li> <%= link_to convo.topic, convo %> </li>
   <% end %>
 </ul>
 
 <p>What to create a new convo? <%= link_to "Create new convo now!", new_convo_path %></p>
+

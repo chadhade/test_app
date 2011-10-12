@@ -1,4 +1,7 @@
 class ConvosController < ApplicationController
+  $default_open = 60
+  $default_duration = 20
+  
   def new
     @convo = Convo.new
   end
@@ -22,6 +25,23 @@ class ConvosController < ApplicationController
 
   def index
     @convos = Convo.all
+	
+	@convos_participating = Array.new
+	@convos_join = Array.new
+	@convos_watch = Array.new
+	@convos_old = Array.new
+	
+	@convos.each do |convo|
+	  @participating = false; convo.users.each {|user| @participating = true if user.id == current_user.id}
+	  @open = (Time.now - convo.created_at) <= $default_open*60
+	  @enduring = true; @enduring = (Time.now - convo.start_time) <= $default_duration*60 if !convo.start_time.nil?
+	  
+	  @convos_participating << convo if @participating and @open and @enduring
+	  @convos_join << convo if !@participating and convo.start_time.nil? and @open
+	  @convos_watch << convo if !@participating and !convo.start_time.nil? and @enduring
+	  @convos_old << convo if !@open or !@enduring
+	end
+		
   end
 
 end

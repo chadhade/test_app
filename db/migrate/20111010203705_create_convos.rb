@@ -2,8 +2,8 @@ class CreateConvos < ActiveRecord::Migration
   def self.up
     create_table :convos do |t|
       t.text :topic
-      t.time :start_time
-      t.time :end_time
+      t.datetime :start_time
+      t.datetime :end_time
       t.integer :current_turn
 
       t.timestamps
