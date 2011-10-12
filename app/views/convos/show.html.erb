@@ -8,7 +8,7 @@
 <%= "participating" if viewing == false %>
 <%= "viewing" if viewing == true %>
 <br>
-<%= "current turn: #{User.find_by_id(@convo.current_turn).handle}" %>
+<%= "current turn: #{User.find_by_id(@convo.current_turn).handle}" if !@convo.current_turn.nil? %>
 
 <h1>
 Convo: <%= @convo.topic %> 
@@ -16,7 +16,7 @@ Convo: <%= @convo.topic %>
 
 <ul class = "Convo_posts">
   <% @posts.each do |post| %>
-    <%= post.content %> <br> <br>
+    <%= "#{post.user.handle}: #{post.content}" %> <br> <br>
   <% end %>
 </ul>
 
