@@ -1,3 +1,5 @@
+<%= juggernaut %>
+
 <% viewing = true %>
 <% ConvoUser.find_all_by_convo_id(@convo.id).each do |convouser| %>
   <br><%= "#{convouser.user.handle}:" %> <%= "creator? #{convouser.creator}" %>

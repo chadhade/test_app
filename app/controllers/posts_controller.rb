@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   def create
     @convo_id = params[:post][:convo_id]
 	@convo = Convo.find_by_id(@convo_id)
-	@post = current_user.posts.create(params[:post])
+	@post = current_user.posts.create(params[:post]) # convo_id is passed as a hidden field
 	
     #create a new entry in ConvoUser the first time joining a conversation and sets current_turn
 	if ConvoUser.find_by_user_id_and_convo_id(current_user.id, @convo_id).nil?
