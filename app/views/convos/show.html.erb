@@ -1,5 +1,4 @@
 <%= juggernaut %>
-
 <% viewing = true %>
 <% ConvoUser.find_all_by_convo_id(@convo.id).each do |convouser| %>
   <br><%= "#{convouser.user.handle}:" %> <%= "creator? #{convouser.creator}" %>
@@ -12,9 +11,18 @@
 <br>
 <%= "current turn: #{User.find_by_id(@convo.current_turn).handle}" if !@convo.current_turn.nil? %>
 
+<div id="defaultCountdown"></div>
+
 <h1>
 Convo: <%= @convo.topic %> 
 </h1>
+
+<script type="text/javascript">
+    
+	var secondsMore = "<%= (@convo.end_time  - Time.now).seconds.to_int %>";
+		
+</script>
+
 created_at: <%= @convo.created_at %> 
 and started_at <%= if @convo.start_time.nil? then "no start time" else @convo.start_time end %>
 

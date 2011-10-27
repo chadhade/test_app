@@ -30,13 +30,6 @@ ActiveRecord::Schema.define(:version => 20111011192412) do
     t.datetime "updated_at"
   end
 
-  create_table "debates", :force => true do |t|
-    t.text     "topic"
-    t.integer  "length"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "posts", :force => true do |t|
     t.integer  "user_id"
     t.integer  "convo_id"

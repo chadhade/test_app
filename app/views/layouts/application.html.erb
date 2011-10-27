@@ -3,10 +3,14 @@
 <head>
   <title>Convo App</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= javascript_include_tag 'prototype', :juggernaut %>
-  <%= csrf_meta_tag %>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.js"></script>
+  <%= javascript_include_tag :defaults, "jquery.countdown" %>
+   <%= csrf_meta_tag %>
+ 
+ </head>
+ 
 </head>
+
 <header>
 <% if signed_in? %>
   <li><%= link_to current_user.handle, current_user %></li>
