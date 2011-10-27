@@ -7,7 +7,7 @@
 	
 	endTime.setSeconds(endTime.getSeconds() + parseFloat(secondsMore));
 			
-	new Date(endTime.getFullYear(), endTime.getMonth(), endTime.getDay(), endTime.getHours(), endTime.getMinutes(), endTime.getSeconds());
+	
 	$('#defaultCountdown').countdown({until: endTime, format: 'Ms'});
 
 

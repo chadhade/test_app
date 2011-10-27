@@ -8,6 +8,7 @@ class ConvosController < ApplicationController
 
   def create
 	@convo = Convo.new(params[:convo])
+	@convo.end_time = Time.now + 1.day
 	# current_user.convos << @convo 
 	# ConvoUser.new(:user_id => current_user.id, :convo_id => @convo.id, :creator => true).save
 	if current_user.convo_users.create(:creator => true, :convo => @convo)
